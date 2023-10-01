@@ -1,0 +1,171 @@
+/* Colors */
+:root {
+    --main-color: #1e53e1;
+}
+
+/* Reset */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Segoe UI", sans-serif;
+    font-size: 14px;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+
+/* Base styles */
+body {
+    background-color: #f4f4fe;
+}
+
+.container {
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 0 16px;
+    min-height: 100vh;
+}
+
+
+/* Button */
+.button {
+    background-color: var(--main-color);
+    color: white;
+    padding: 12px 16px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: .4s;
+    font-weight: 500;
+}
+
+.button:hover {
+    opacity: .9;
+}
+
+
+/* Input */
+.input {
+    padding: 12px 16px;
+    border: none;
+    border-radius: 8px;
+    outline: none;
+}
+
+.input:focus {
+    outline: 2px solid var(--main-color)
+}
+
+
+/* Checkbox */
+.checkbox {
+    width: 15px;
+    height: 15px;
+    accent-color: var(--main-color);
+    cursor: pointer;
+}
+
+
+/* Card */
+.card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    font-weight: 500;
+}
+
+.card.primary {
+    background-color: white;
+    border: 2px solid white;
+}
+
+.card.outlined {
+    background-color: transparent;
+    border: 2px solid var(--main-color);
+}
+
+
+/* Link */
+.link {
+    transition: .4s;
+}
+
+.link:hover {
+    color: var(--main-color)
+}
+
+
+/* Item */
+.item {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+
+/* Short styles */
+.flex {
+    display: flex;
+}
+
+.wrap {
+    flex-wrap: wrap;
+}
+
+.ac {
+    align-items: center;
+}
+
+.sb {
+    justify-content: space-between;
+}
+
+.jc {
+    justify-content: center;
+}
+
+.col {
+    flex-direction: column;
+}
+
+.row {
+    flex-direction: row;
+}
+
+.g-20 {
+    gap: 20px;
+}
+
+.g-10 {
+    gap: 10px;
+}
+
+.p-20 {
+    padding: 20px;
+}
+
+.w-600 {
+    max-width: 600px;
+    width: 100%;
+}
+
+.w-max {
+    max-width: 100%;
+    width: 100%;
+}
+
+.list {
+    list-style: none;
+}
+
+.title {
+    font-size: 28px;
+    font-weight: 600;
+}
