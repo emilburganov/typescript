@@ -1,9 +1,9 @@
-import {Dispatch, FC, SetStateAction, useState} from "react";
-import classnames from 'classnames';
+import classnames from "classnames";
+import {Dispatch, FC, ReactNode, SetStateAction, useState} from "react";
 
 export enum CardVariant {
-    outlined = 'outlined',
-    primary = 'primary',
+    outlined = "outlined",
+    primary = "primary",
 }
 
 interface CardProps {
@@ -11,6 +11,9 @@ interface CardProps {
     height: string;
     variant?: CardVariant;
     onClick?: (count: number, setCount: Dispatch<SetStateAction<number>>) => void;
+    children: ReactNode;
+
+    [props: string]: any;
 }
 
 const Card: FC<CardProps> =
@@ -22,11 +25,11 @@ const Card: FC<CardProps> =
          onClick,
          ...props
      }) => {
-        const [count, setCount] = useState(0);
+        const [count, setCount] = useState<number>(0);
 
         return (
             <div
-                className={classnames('card', variant)}
+                className={classnames("card", variant)}
                 style={{width, height}}
                 onClick={() => onClick && onClick(count, setCount)}
                 {...props}

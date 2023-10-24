@@ -1,25 +1,30 @@
-import {useEffect, useState} from "react";
 import axios from "axios";
-import {IUser} from "../types/types";
-import UserItem from "../components/UserItem";
+import {useEffect, useState} from "react";
 import List from "../components/List";
+import UserItem from "../components/UserItem";
+import {IUser} from "../types/types";
 
 const Todos = () => {
     const [users, setUsers] = useState<IUser[]>([]);
+
+    /**
+     * Fetch users from jsonplaceholder method
+     * @returns {Promise<void>}
+     */
     const fetchUsers = async () => {
         try {
-            const response = await axios.get<IUser[]>('https://jsonplaceholder.typicode.com/users');
-            setUsers(response.data)
+            const response = await axios.get<IUser[]>("https://jsonplaceholder.typicode.com/users");
+            setUsers(response.data);
         } catch (error) {
-            alert(error)
+            alert(error);
         }
-    }
+    };
 
     useEffect(() => {
         (async () => {
             await fetchUsers();
-        })()
-    }, [])
+        })();
+    }, []);
 
     return (
         <List

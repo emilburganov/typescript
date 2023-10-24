@@ -2,6 +2,8 @@ import {FC} from "react";
 
 interface ButtonProps {
     children: string,
+
+    [props: string]: any;
 }
 
 const Button: FC<ButtonProps> = ({children, ...props}) => {

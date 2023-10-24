@@ -1,22 +1,30 @@
-import {DragEvent, MouseEvent, useState} from 'react';
+import {DragEvent, MouseEvent, useState} from "react";
+import Card from "../components/Card";
 import Button from "../components/UI/Button";
 import Input from "../components/UI/Input";
-import Card from "../components/Card";
 
 const EventsExample = () => {
-    const [value, setValue] = useState('')
+    const [value, setValue] = useState<string>("");
 
+    /**
+     * Button onclick handler
+     * @param {React.MouseEvent<HTMLButtonElement>} event
+     */
     const clickHandler = (event: MouseEvent<HTMLButtonElement>) => {
         event.preventDefault();
 
-        console.log('Clicked!');
-    }
+        console.log("Clicked!");
+    };
 
+    /**
+     * Button drag handler
+     * @param {React.DragEvent<HTMLDivElement>} event
+     */
     const dragHandler = (event: DragEvent<HTMLDivElement>) => {
         event.preventDefault();
 
-        console.log('Drag!');
-    }
+        console.log("Drag!");
+    };
 
     return (
         <div className="flex col g-10">
@@ -29,8 +37,8 @@ const EventsExample = () => {
                 Click me!
             </Button>
             <Card
-                width={'200px'}
-                height={'200px'}
+                width={"200px"}
+                height={"200px"}
                 draggable
                 onDrag={dragHandler}
             >

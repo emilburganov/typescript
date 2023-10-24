@@ -1,9 +1,9 @@
-import {ReactElement, ReactNode} from 'react';
+import {ReactElement} from "react";
 
 interface ListProps<T> {
     title: string;
-    items: unknown[];
-    renderItem: (item: T) => ReactNode
+    items: T[];
+    renderItem: (item: T) => ReactElement;
 }
 
 const List: <T>(props: ListProps<T>) => ReactElement = ({title, items, renderItem}) => {
@@ -17,6 +17,6 @@ const List: <T>(props: ListProps<T>) => ReactElement = ({title, items, renderIte
             </ul>
         </div>
     );
-}
+};
 
 export default List;

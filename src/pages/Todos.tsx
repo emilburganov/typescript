@@ -1,29 +1,34 @@
-import {useEffect, useState} from "react";
 import axios from "axios";
-import {ITodo} from "../types/types";
-import TodoItem from "../components/TodoItem";
+import {useEffect, useState} from "react";
 import List from "../components/List";
+import TodoItem from "../components/TodoItem";
+import {ITodo} from "../types/types";
 
 const Todos = () => {
     const [todos, setTodos] = useState<ITodo[]>([]);
+
+    /**
+     * Fetch todos from jsonplaceholder method
+     * @returns {Promise<void>}
+     */
     const fetchTodos = async () => {
         try {
-            const response = await axios.get<ITodo[]>('https://jsonplaceholder.typicode.com/todos', {
+            const response = await axios.get<ITodo[]>("https://jsonplaceholder.typicode.com/todos", {
                 params: {
                     _limit: 20,
-                }
+                },
             });
-            setTodos(response.data)
+            setTodos(response.data);
         } catch (error) {
-            alert(error)
+            alert(error);
         }
-    }
+    };
 
     useEffect(() => {
         (async () => {
             await fetchTodos();
-        })()
-    }, [])
+        })();
+    }, []);
 
     return (
         <List
